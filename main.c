@@ -22,8 +22,7 @@ liste *creer_liste(liste *tete) {
             tete = nouveau;
         } else {
             courant = tete;
-            while (courant->suivant != NULL)
-                courant = courant->suivant;
+            while (courant->suivant != NULL)courant = courant->suivant;
             courant->suivant = nouveau;
             nouveau->suivant = NULL;
         }

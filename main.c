@@ -7,30 +7,23 @@ typedef struct liste {
 } liste;
 
 liste *creer_liste(liste *tete) {
-    liste *nouveau, *courant;
-    int valeur;
+    liste *nouveau, *courant; int valeur;
     printf("Entrer -1 pour terminer \n");
     printf("Entrer la donnée :\n ");
     scanf("%d", &valeur);
-
     while (valeur != -1) {
         nouveau = (liste *)malloc(sizeof(liste));
         nouveau->donnee = valeur;
-
-        if (tete == NULL) {
-            nouveau->suivant = NULL;
-            tete = nouveau;
-        } else {
+        if (tete == NULL) { nouveau->suivant = NULL; tete = nouveau;} 
+        else {
             courant = tete;
             while (courant->suivant != NULL)courant = courant->suivant;
             courant->suivant = nouveau;
             nouveau->suivant = NULL;
         }
-
         printf("Entrer la donnée: \n ");
         scanf("%d", &valeur);
     }
-
     return tete;
 }
 
